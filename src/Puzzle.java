@@ -225,6 +225,7 @@ public class Puzzle extends GraphStateImpl
                 GraphSearchAlgorithm algorithm = new AStar(puzzle);
                 algorithm.execute();
                 Puzzle solution = (Puzzle)algorithm.getSolutions().get(0);
+                System.out.println("Sliding puzzle: ");
                 System.out.println(puzzle.toString());
                 System.out.println("Solution:\n" + solution);
                 System.out.println("Path length: " + solution.getPath().size());
@@ -234,7 +235,7 @@ public class Puzzle extends GraphStateImpl
                 System.out.println("Time: " + algorithm.getDurationTime());
                 System.out.println("Path cost: "+ solution.getG());
                 System.out.println("Heuristic: " + h.getClass());
-                System.out.println("H: " + solution.getH() + "\n");
+                System.out.println("H: " + solution.getH() + "\n-------------------------------");
             }
         }
 
