@@ -218,7 +218,7 @@ public class Puzzle extends GraphStateImpl
         {
             Puzzle puzzle = new Puzzle();
             puzzle.shuffleBoard(1000, puzzle);
-            StateFunction[] heuristics = {new HFunctionMisplacedTiles(), new HeuristicManhattan()};
+            StateFunction[] heuristics = {new HFunctionMisplacedTiles(), new HFunctionManhattan()};
             for(StateFunction h: heuristics)
             {
                 Puzzle.setHFunction(h);
@@ -235,7 +235,7 @@ public class Puzzle extends GraphStateImpl
                 System.out.println("Time: " + algorithm.getDurationTime());
                 System.out.println("Path cost: "+ solution.getG());
                 System.out.println("Heuristic: " + h.getClass());
-                System.out.println("H: " + solution.getH() + "\n-------------------------------");
+                System.out.println("\n-------------------------------");
             }
         }
 

@@ -1,7 +1,7 @@
 import sac.State;
 import sac.StateFunction;
 
-public class HeuristicManhattan extends StateFunction
+public class HFunctionManhattan extends StateFunction
 {
     @Override
     public double calculate(State state)
@@ -12,17 +12,14 @@ public class HeuristicManhattan extends StateFunction
         {
             for(int j = 0; j < puzzle.getN(); j++)
             {
-                if((i != puzzle.getX()) && (j != puzzle.getY()))
-                {
-                    numberOfTiles += manhattanDistance(puzzle, i, j);
-                }
+                numberOfTiles += manhattanDistance(puzzle, i, j);
             }
         }
         return numberOfTiles;
     }
     public int manhattanDistance(Puzzle puzzle, int i, int j)
     {
-        return Math.abs(puzzle.board[i][j] / puzzle.getN() - i / puzzle.getN()) + Math.abs(puzzle.board[i][j] % puzzle.getN() - j % puzzle.getN());
+        return Math.abs(puzzle.board[i][j] / puzzle.getN() - i) + Math.abs(puzzle.board[i][j] % puzzle.getN() - j);
     }
 
 
